@@ -1,1 +1,1 @@
-web: sh setup.sh && streamlit run model.pygit
+web: sh setup.sh && streamlit run model.py
