@@ -1,6 +1,7 @@
 import cv2
 import time
 import streamlit as st
+<<<<<<< HEAD
 from PIL import Image
 from face_recognition_1 import FaceRecognition
 
@@ -16,6 +17,12 @@ st.markdown(f"""
     padding-left: {padding}rem;
     padding-bottom: {padding}rem;
 }} </style> """, unsafe_allow_html=True)
+=======
+import numpy as np
+from PIL import Image
+from face_recognition_1 import FaceRecognition
+
+>>>>>>> 518c638e54400d1b65fcb44ab5cb78c73d2fe86a
 
 
 STYLE = """
@@ -61,7 +68,11 @@ def home():
     <li><h5>Face Encoding:</h5><p>Extract encoding from the face using FaceNet. The implementation of FaceNet can be found <a href="https://github.com/faustomorales/keras-facenet" target="_blank">here</a></p></li>
     <li><h5>Face Classification:</h5><p>Classify the faces via euclidean distances between face encodings</p></li>
     </ul>  
+<<<<<<< HEAD
     <p>Use the sidebar to choose what you would like to do.</p>
+=======
+    <p>Use the left sidebar to choose what you would like to do.</p>
+>>>>>>> 518c638e54400d1b65fcb44ab5cb78c73d2fe86a
     </div>
     </body>
     """
@@ -96,6 +107,7 @@ def find_person():
   
 
     uploaded_image = st.file_uploader("Upload an image to find match in the database.", type=['jpg', 'png','jpeg'], key=None, accept_multiple_files=False)
+<<<<<<< HEAD
     if uploaded_image is not None:
         if st.button("Recognize"):
             try:
@@ -111,6 +123,22 @@ def find_person():
                         st.balloons()
             except IndexError:
                 st.error(f'Face not detected! Recapture image and ensure that the face is fully visible')
+=======
+    # person = "madonna"
+    if uploaded_image is not None:
+        if st.button("Recognize"):
+            try:
+                model = FaceRecognition()
+                model.load("lfw_model.pkl")
+                image = Image.open(uploaded_image)
+                result = model.predict(image, threshold=0.6)
+                if result["predictions"][0]["person"] == "UNKNOWN":
+                    st.warning('No match found in database!!')
+                else:
+                    st.success(f'Match found! This person has been identified as {result["predictions"][0]["person"]}. Confidence: {round(100*result["predictions"][0]["confidence"], 2)}%.')
+            except IndexError:
+                st.warning(f'Face not detected! Recapture image and ensure that the face is fully visible')
+>>>>>>> 518c638e54400d1b65fcb44ab5cb78c73d2fe86a
 
 
 def upload_person():    
@@ -136,6 +164,7 @@ def main():
     </div>
     </body>
     """
+<<<<<<< HEAD
     hide_streamlit_style = """
     <style>
     #MainMenu {visibility: hidden;}
@@ -152,6 +181,9 @@ def main():
     </style>
     """
     st.markdown(hide_streamlit_style, unsafe_allow_html=True)
+=======
+    
+>>>>>>> 518c638e54400d1b65fcb44ab5cb78c73d2fe86a
     st.markdown(STYLE, unsafe_allow_html=True)
     st.markdown(html_temp_main, unsafe_allow_html=True) 
 
