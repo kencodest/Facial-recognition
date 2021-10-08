@@ -98,7 +98,7 @@ def find_person():
                 else:
                     st.success(f'Match found! This person has been identified as {result["predictions"][0]["person"]}. Confidence: {round(100*result["predictions"][0]["confidence"], 2)}%.')
             except IndexError:
-                st.warning(f'Please upload an image with one face!!')
+                st.warning(f'Face not detected! Recapture image and ensure that the face is fully visible')
 
 
 def upload_person():    
