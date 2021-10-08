@@ -1,0 +1,9 @@
+keras-facenet
+sklearn
+scipy
+imutils
+tqdm
+opencv-python
+tensorflow-cpu
+streamlit
+opencv-python-headless
