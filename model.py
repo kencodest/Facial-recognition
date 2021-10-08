@@ -7,7 +7,7 @@ from face_recognition_1 import FaceRecognition
 st.set_page_config(page_title="WebApp", page_icon="🖖")
 
 #Condense the layout
-padding = 0
+padding = 1
 st.markdown(f""" 
 <style>
 .reportview-container .main .block-container{{
