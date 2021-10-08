@@ -45,7 +45,6 @@ p {
 
 
 def home():
-    
     """
     The face recognition homepage
     """
@@ -62,7 +61,6 @@ def home():
     <li><h5>Face Classification:</h5><p>Classify the faces via euclidean distances between face encodings</p></li>
     </ul> 
     <p>Use the sidebar to choose what you would like to do.</p>
-
     </div>
     </body>
     """
