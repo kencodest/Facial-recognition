@@ -88,18 +88,17 @@ def find_person():
     # person = "madonna"
     if uploaded_image is not None:
         if st.button("Recognize"):
-            model = FaceRecognition()
-            model.load("lfw_model.pkl")
-            image = Image.open(uploaded_image)
-            result = model.predict(image, threshold=0.6)
-            bar = st.progress(0)
-            for i in range(100):
-                time.sleep(0.1)
-                bar.progress(i + 1)
-            if result["predictions"][0]["person"] == "UNKNOWN":
-                st.warning('No match found in database!!')
-            else:
-                st.success(f'Match found! This person has been identified as {result["predictions"][0]["person"]}. Confidence: {round(100*result["predictions"][0]["confidence"], 2)}%.')
+            try:
+                model = FaceRecognition()
+                model.load("lfw_model.pkl")
+                image = Image.open(uploaded_image)
+                result = model.predict(image, threshold=0.6)
+                if result["predictions"][0]["person"] == "UNKNOWN":
+                    st.warning('No match found in database!!')
+                else:
+                    st.success(f'Match found! This person has been identified as {result["predictions"][0]["person"]}. Confidence: {round(100*result["predictions"][0]["confidence"], 2)}%.')
+            except IndexError:
+                st.warning(f'Please upload an image with one face!!')
 
 
 def upload_person():    
