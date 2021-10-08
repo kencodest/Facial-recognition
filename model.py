@@ -65,7 +65,7 @@ def find_person():
     html_temp_find = """
     <body>
     <div>    
-    <p>The model used here has been trained on the Labelled Faces in the World (LFW) dataset with 90% accuracy. To test it, you can use
+    <p>The model used here has been trained on the <a href="http://vis-www.cs.umass.edu/lfw/" target="_blank">Labelled Faces in the World (LFW)</a> dataset with 90% accuracy. To test it, you can use
     images of people like: Arnold_Schwarzenegger, Bill_Gates, Charles Moose, George Bush, Tom_Ridge e.t.c. for positive results
     <br>
     <br>
