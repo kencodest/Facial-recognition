@@ -50,7 +50,7 @@ def home():
     <li><h5>Face Encoding:</h5><p>Extract encoding from the face using FaceNet. The implementation of FaceNet can be found <a href="https://github.com/faustomorales/keras-facenet" target="_blank">here</a></p></li>
     <li><h5>Face Classification:</h5><p>Classify the faces via euclidean distances between face encodings</p></li>
     </ul>  
-    <p>Use the sidebar to choose what you would like to do.</p>
+    <p>Use the left sidebar to choose what you would like to do.</p>
     </div>
     </body>
     """
