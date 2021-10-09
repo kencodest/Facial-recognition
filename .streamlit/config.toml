@@ -1,5 +1,4 @@
 [theme]
-<<<<<<< HEAD
 primaryColor = "#FF4B4B"
 backgroundColor = "#0E1117"
 secondaryBackgroundColor = "#262730"
@@ -7,10 +6,3 @@ textColor = "#FAFAFA"
 font = "sans serif"
 
 
-=======
-primaryColor = '#d33682'
-backgroundColor = '#002b36'
-secondaryBackgroundColor = '#586e75'
-textColor = '#fafafa'
-font = 'sans serif'
->>>>>>> 311d31722867b0488f0be8eeb11d842dc41bd014
