@@ -137,7 +137,7 @@ def main():
     """
     hide_streamlit_style = """
     <style>
-    #MainMenu {visibility: hidden;}
+    #MainMenu {visibility: visible;}
     header {visibility: hidden;}
     footer {visibility: hidden;}
     footer:after{
