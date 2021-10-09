@@ -1,7 +1,7 @@
 import cv2
-import time
 import streamlit as st
 from PIL import Image
+from PIL import UnidentifiedImageError
 from face_recognition_1 import FaceRecognition
 
 st.set_page_config(page_title="WebApp", page_icon="🖖")
@@ -108,8 +108,10 @@ def find_person():
                     else:
                         st.success(f'Match found! This person has been identified as {result["predictions"][0]["person"]}. Confidence: {round(100*result["predictions"][0]["confidence"], 2)}%.')
                         st.balloons()
-            except IndexError:
+            except (IndexError, UnidentifiedImageError):
                 st.error(f'Face not detected! Recapture image and ensure that the face is fully visible')
+ 
+
 
 
 def upload_person():    
