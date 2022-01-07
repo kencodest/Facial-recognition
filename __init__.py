@@ -1,2 +1,0 @@
-from face_recognition_1 import FaceRecognition
-from euclidean_classifier_1 import EuclideanClassifier
