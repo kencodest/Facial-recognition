@@ -164,29 +164,32 @@ def upload_person():
 
     #form to upload a missing person to the database
     with st.form(key = "form1"):
-        name = st.text_input(label = "Enter the name of the person")
+        name = st.text_input(label = "Enter the name of the person (*required)")
         upload_image = st.file_uploader("Upload an image to the database.", type=['jpg', 'png','jpeg'], key=None, accept_multiple_files=False)
         if st.form_submit_button(label = "Upload"):
-            with st.spinner(text='Processing............'):
-                if upload_image is not None:
-                    image = Image.open(upload_image)
-                    img_array = np.array(image.convert('RGB'))
-                    src = cv2.cvtColor(img_array, cv2.COLOR_RGB2BGR)
-                    img = cv2.cvtColor(src, cv2.COLOR_BGR2RGB)
-                    detector = MTCNN()
-                    bboxes = detector.detect_faces(img) 
-                    if bboxes == []:
-                        st.warning("Face not detected! Please upload an image with a visible face")
-                    else:
-                        st.success("Face successfully detected")
-                        # add a user
-                        add_user_img(user_db, FRmodel, name, img)
+            if not name:
+                st.warning("Please fill out the required fields")
+            else:           
+                with st.spinner(text='Processing............'):
+                    if upload_image is not None:
+                        image = Image.open(upload_image)
+                        img_array = np.array(image.convert('RGB'))
+                        src = cv2.cvtColor(img_array, cv2.COLOR_RGB2BGR)
+                        img = cv2.cvtColor(src, cv2.COLOR_BGR2RGB)
+                        detector = MTCNN()
+                        bboxes = detector.detect_faces(img) 
+                        if bboxes == []:
+                            st.warning("Face not detected! Please upload an image with a visible face")
+                        else:
+                            st.success("Face successfully detected")
+                            # add a user
+                            add_user_img(user_db, FRmodel, name, img)
 
-    #form to delete a user from the database
-    # with st.form(key = "form2"):
-    #     name2 = st.text_input(label = "Enter the name of the person to delete")
-    #     if st.form_submit_button(label = "Delete user"):
-    #         delete_user(user_db, name2)
+        #form to delete a user from the database
+        # with st.form(key = "form2"):
+        #     name2 = st.text_input(label = "Enter the name of the person to delete")
+        #     if st.form_submit_button(label = "Delete user"):
+        #         delete_user(user_db, name2)
 
 
 def find_person():    
