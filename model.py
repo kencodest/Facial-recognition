@@ -45,7 +45,7 @@ def ini_user_database():
 user_db = ini_user_database()
 
 
-st.set_page_config(page_title="WebApp", page_icon="🖖")
+st.set_page_config(page_title="Find'em", page_icon="🖖")
 #Condense the layout
 padding = 1
 st.markdown(f""" 
