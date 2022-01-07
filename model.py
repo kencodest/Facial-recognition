@@ -5,10 +5,7 @@ import cv2
 import os.path
 import tensorflow
 import numpy as np
-import pandas as pd
 import streamlit as st
-import matplotlib.pyplot as plt
-from numpy import genfromtxt
 from PIL import Image
 from mtcnn import MTCNN
 from tensorflow.keras.models import load_model

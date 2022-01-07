@@ -1,9 +1,6 @@
-keras-facenet
-sklearn
-scipy
-imutils
-tqdm
+mtcnn
+PIL
 opencv-python
-tensorflow-cpu
-streamlit
 opencv-python-headless
+streamlit
+tensorflow-cpu
