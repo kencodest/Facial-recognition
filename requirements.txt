@@ -1,6 +1,4 @@
 mtcnn
-PIL
-opencv-python
 opencv-python-headless
 streamlit
 tensorflow-cpu
