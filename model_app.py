@@ -234,7 +234,7 @@ def find_person():
                 identity = name
         
         if (min_dist*0.1) > threshold: 
-            st.warning("Person not found in the database. Consider uploading their facial image in the Upload Person rab.")
+            st.warning("Person not found in the database! Please upload their photo in the Upload Person tab.")
         else:
             st.success(f"Match found! Person identified as {str(identity)}")
 
